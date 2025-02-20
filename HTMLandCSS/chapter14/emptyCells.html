@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaps Between Cells</title>
+    <style>
+        td {
+            padding: 15px;
+            border: 2px solid #41e9ff;
+        }
+        table.one {
+            empty-cells: show;
+        }
+        table.two {
+            empty-cells: hide;
+        }
+    </style>
+</head>
+<body>
+    <table class="one">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td></td>
+        </tr>
+    </table>
+    <table class="two">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
