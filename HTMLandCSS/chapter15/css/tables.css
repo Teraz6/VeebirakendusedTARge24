@@ -1,0 +1,46 @@
+table {
+    border-spacing: 0px;
+}
+
+th,td {
+    padding: 5px 30px 5px 10px;
+    border-spacing: 0px;
+    font-size: 90%;
+    margin: 0px;
+}
+
+th,td {
+    color: #530a4d;
+    text-align: left;
+    background-color: beige;
+    border-top: 1px solic #cbd2d8;
+    border-bottom: 1px solid #c4d47c;
+    border-right: 1px solid #d23f21;
+}
+
+tr.head th {
+    color: #fefe;
+    background-color: #9020b2;
+    border-bottom: 2px solid #0c5494;
+    border-right: 1px solid #537ca0;
+    border-top: 1px solid #527ca0;
+    text-align: center;
+    text-shadow: -1px -1px -1px #666;
+    letter-spacing: 0.15em;
+}
+
+tr.head th:first-child {
+    border-top-left-radius: 5px;
+}
+
+tr.head th:last-child {
+    border-top-right-radius: 5px;
+}
+
+td {
+    text-shadow: 1px 1px 1px #fff;
+}
+
+tr.even td, tr.even th {
+    background-color: #adb4b9;
+}
