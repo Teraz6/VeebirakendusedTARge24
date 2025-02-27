@@ -97,3 +97,6 @@ h1 {
 .footer a {
     color: #807c72;
 }
+th, td {
+    padding: 0px 0px 10px 5px;
+}
