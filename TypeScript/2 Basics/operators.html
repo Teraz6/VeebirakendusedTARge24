@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Operators</title>
+    <link rel="stylesheet" href="../../Bootstrap/1 Intro/bootstrap-5.3.3-dist/css/bootstrap.css">
+</head>
+<body class="m-5">
+    <h4>Liitmine</h4>
+    <p id="add"></p>
+    <h4>Lahutamine</h4>
+    <p id="minus"></p>
+    <h4>Jagamine</h4>
+    <p id="division"></p>
+    <h4>Korrutamine</h4>
+    <p id="multiply"></p>
+    <h4>Jääk</h4>
+    <p id="reminder"></p>
+    <h4>Inkremendi lisamine enne arvu</h4>
+    <p id="increment"></p>
+    <h4>Inkremendi lisamine pärast arvu</h4>
+    <p id="increment2"></p>
+</body>
+<script>
+    let y = 5;
+    let x = y + 5;
+    document.getElementById("add").innerHTML = "Tulemus on liitmisel: " + x;
+
+    let minus = x - 3;
+    document.getElementById("minus").innerHTML = "Tulemus on lahutades: " + minus;
+
+    let division = x / 2;
+    document.getElementById("division").innerHTML = "Tulemus on jagades: " + division;
+
+    let multiply = x * 3
+    document.getElementById("multiply").innerHTML = "Tulemus on korrutades: " + multiply;
+
+    let reminder = x % 3
+    document.getElementById("reminder").innerHTML = "Jääk on: " + reminder;
+
+    let increment =  ++ x;
+    document.getElementById("increment").innerHTML = "Tulemus on lisamise puhul: " + increment;
+
+    let increment2 = x ++ ;
+    document.getElementById("increment2").innerHTML = "Tulemus on lisamise puhul: " + x;
+</script>
+</html>
