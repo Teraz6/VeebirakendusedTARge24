@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+    <link rel="stylesheet" href="../../Bootstrap/1 Intro/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <script src="../../Bootstrap/1 Intro/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+    <div class="d-flex justify-content-center my-5 bg-dark-subtle">
+        <!-- Employer cost -->
+        <div class="col-3">
+            <div class="container-fluid text-center">
+                <p>Sisesta tööandja kulu</p>
+                <input class="border-warning rounded-3" id="inputEmployerCost" type="text" placeholder="Sisesta tööandja kulu">
+                <p id="employerBrutoSalary"></p>
+                <p id="employerNetoSalary"></p>
+            </div>
+        </div>
+        <!-- Bruto salary -->
+        <div class="col-3">
+            <div class="container-fluid text-center">
+                <p>Sisesta brutopalk</p>
+                <input class="border-warning rounded-3" id="inputBrutoSalary" type="text" placeholder="Sisesta brutopalk">
+                <p id="brutoEmployerCost"></p>
+                <p id="brutoNetoSalary"></p>
+            </div>
+        </div>
+        <!-- Neto salary -->
+        <div class="col-3">
+            <div class="container-fluid text-center">
+                <p>Sisesta netopalk</p>
+                <input class="border-warning rounded-3" id="inputNetoSalary" type="text" placeholder="Sisesta netopalk">
+                <p id="netoEmployerCost"></p>
+                <p id="netoBrutoSalary"></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+//Palga kalkulaator
+//1. Sina sisestad brutotasu ja valem arvutab välja netotasu.
+//2. Kokku peab olema kolm erinevat meetodit. 
+// Enne kui meetod algab, siis peab olema kontroll, 
+// et millist meetodi hakatakse kasutama ja sisestatud palgasumma 
+// peab minema edasi järgmisse meetodi.
+//3. Netotasu peab arvutama selliselt välja, et sina ei peaks 
+// tuludeklaratsiooni ajal juurde maksma ega saa pärast riigilt raha 
+// juurde kuna oled rohkem maksnud.
+//4. Kood peab olema inglisekeelne.
+//Palgakalkulaator:
+//https://www.kalkulaator.ee/et/palgakalkulaator
+//Palga arvutamise valem:
+//https://www.emta.ee/et/maksuvaba-tulu
+
+// 3. punkt pole täidetud
+
+function calculateEmployerCost() {
+    let employerCost = parseFloat(document.getElementById("inputEmployerCost").value);
+    let brutoSalary = employerCost - (employerCost * 0.2466) - (employerCost * 0.006);
+    // Calculation: employerCost - social tax (24.66%) - unemployement insurance (0.6%)
+    let netoSalary = brutoSalary - ((employerCost * 0.015) + (employerCost * 0.012) + (employerCost * 0.1585));
+    // Calculation: brutoSalary - (pension (1.5%) + unemployement insurance (1.2%) + income tax (15.85%)
+    document.getElementById("employerBrutoSalary").innerHTML = "Brutopalk on " + brutoSalary.toFixed(2) + " €";
+    document.getElementById("employerNetoSalary").innerHTML = "Netopalk on " + netoSalary.toFixed(2) + " €";
+}
+document.getElementById("inputEmployerCost").addEventListener("input", calculateEmployerCost);
+
+function calculateBrutoSalary() {
+    let brutoSalary = parseFloat(document.getElementById("inputBrutoSalary").value);
+    let netoSalary = brutoSalary - (brutoSalary * 0.2121) - (brutoSalary * 0.02) - (brutoSalary * 0.016);
+    // Calculation: bruto - income tax (21.21%) - pension contribution (2%) - unemployment insurance (1.6%)
+    let employerCost = brutoSalary + (brutoSalary * 0.33) + (brutoSalary * 0.008);
+    // Calculation: bruto + social tax (33%) + unemployement insurance (0.8%)
+    document.getElementById("brutoEmployerCost").innerHTML = "Tööandja kulu on " + employerCost.toFixed(2) + " €";
+    document.getElementById("brutoNetoSalary").innerHTML = "Netopalk on " + netoSalary.toFixed(2) + " €";
+}
+document.getElementById("inputBrutoSalary").addEventListener("input", calculateBrutoSalary);
+
+function calculateNetoSalary () {
+    let netoSalary = parseFloat(document.getElementById("inputNetoSalary").value);
+    let brutoSalary = netoSalary + (netoSalary * 0.0266) + (netoSalary * 0.0213) + (netoSalary * 0.2821);
+    // Calculation: netoSalary + pension (2.66%) + unemployement insurance (2.13%) + income tax (28.21%)
+    let employerCost = brutoSalary + ((netoSalary * 0.4389) + (netoSalary * 0.0106));
+    // Calculation: netoSalary + social tax (43.89%) + unemployement insurance (1.06%)
+    document.getElementById("netoEmployerCost").innerHTML = "Tööandja kulu on " + employerCost.toFixed(2) + " €";
+    document.getElementById("netoBrutoSalary").innerHTML = "Brutopalk on " + brutoSalary.toFixed(2) + " €";
+}
+document.getElementById("inputNetoSalary").addEventListener("input", calculateNetoSalary);
+
+
+</script>
+</html>
