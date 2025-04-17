@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1 id="tereTulemast"></h1>
+
+    <p id="loop"></p>
+
+    <p id="someLoop"></p>
+</body>
+<script>
+    let firstName = "Heli";
+    let lastName = "Kopter";
+
+    let text = `Tere tulemast ${firstName}, ${lastName}!`;
+
+    document.getElementById("tereTulemast").innerHTML = text;
+
+    let title = "String Template";
+    let someLoop = ["C++", "JavaScript", "TypeScript"];
+    let forText = "";
+    //tulemus peaks olema selline:
+    //C++
+    //avaScript
+    //TypeScript
+
+    for (const x of someLoop) {
+        forText += `<li>${x}</li>`
+    }
+    document.getElementById("someLoop").innerHTML = forText; 
+
+    let progLang = "";
+    
+    for (let i = 0; i < someLoop.length; i++) {
+        progLang += someLoop[i] + "<br>";
+    }
+    document.getElementById("loop").innerHTML = progLang
+</script>
+</html>
