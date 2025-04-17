@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Switch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p id="month"></p>
+    <p id="monthNr"></p>
+    <p id="day"></p>
+    <p id="dayNr"></p>
+</body>
+<script>
+    //getMonth algab 0-st, mitte 1-st nagu getDay
+    let month;
+    switch (new Date().getMonth()) {
+        case 0:
+            month = "Jaanuar"
+            break;
+        case 1:
+            month = "Veebruar"
+            break;
+        case 2:
+            month = "Märts"
+            break;
+        case 3:
+            month = "Aprill"
+            break;
+        case 4:
+            month = "Mai"
+            break;
+        case 5:
+            month = "Juuni"
+            break;
+        default:
+            month = "Ootan aasta algust :("
+    }
+    document.getElementById("month").innerHTML = "Täna on " + month;
+
+    let monthNr = new Date().getMonth();
+    document.getElementById("monthNr").innerHTML = monthNr + " - <i>näitab mitmes kuu täna on</i>";
+
+    //getDay algab 1-st, mitte 0-st
+    let note;
+    switch (new Date().getDay()) {
+        case 1:
+            note = "Täna on Esmaspäev";
+            break;
+        case 2:
+            note = "Täna on Teisipäev";
+            break;
+        case 3:
+            note = "Täna on Kolmapäev";
+            break;
+        case 4:
+        case 5:
+            note = "Kohe on nädalavahetus";
+            break;
+        case 6:
+        case 7:
+            note = "Praegu on nädalavahetus";
+            break;
+
+        default:
+            day = "Ootan nv";
+    }
+    document.getElementById("day").innerHTML = note;
+
+    let dayNr = new Date().getDay();
+    document.getElementById("dayNr").innerHTML = dayNr + " - <i>näitab mitmes päev täna on</i>";
+
+</script>
+</html>
