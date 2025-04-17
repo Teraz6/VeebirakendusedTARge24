@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loops</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p id="buildingTypes"></p>
+    <p id="correctBuildingTypes"></p>
+    <p id="correctBuildingTypesV2"></p>
+    <p id="someIteration"></p>
+</body>
+<script>
+    //Tuleb kasutada for loopi ja vähemalt 5 elamutüüpi
+    //See ei kuva üiget tulemust vaid näitab numbreid
+    const buildingTypes = ["Korter", "Maja", "Suvila", "Ridamaja", "Talu"];
+    let text = "";
+    for (const x in buildingTypes) {
+        text += `<p>${x}</p>`
+    }
+    document.getElementById("buildingTypes").innerHTML = text;
+
+    //ÕP poolt tehtud variant
+    let result = "";
+    for (let i = 0; i < buildingTypes.length; i++) {
+        result += buildingTypes[i] + "<br>";
+    }
+    document.getElementById("correctBuildingTypes").innerHTML = result;
+
+    let q = 0;
+    let len = buildingTypes.length;
+    let result1 = "";
+    for (;q < buildingTypes.length;) {
+        result1 += buildingTypes[q] + "<br>";
+        q++;
+    }
+    document.getElementById("correctBuildingTypesV2").innerHTML = result1;
+    
+
+    //FOR EACH loop
+
+    const numbers = [34,6,1,89,25,222];
+    let result2 = "";
+    numbers.forEach(someIteration)
+    document.getElementById("someIteration").innerHTML = result2
+
+    function someIteration(value, index, array) {
+        result2 += value + "<br>";
+    }
+</script>
+</html>
