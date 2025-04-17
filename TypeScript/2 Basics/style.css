@@ -12,3 +12,8 @@ h1 {
     border-radius: 10px;
     text-align: center;
 }
+
+p {
+    border-bottom: solid 1px;
+    border-color: #00000048;
+}
