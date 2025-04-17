@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF statement with time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="tereTulemast">Tere õhtust!</h1>
+    <p id="ajalineTervitus"></p>
+    <p id="tervitus"></p>
+    <p id="randomLink"></p>
+</body>
+<script>
+    if (new Date().getHours() < 18) {
+        document.getElementById("tereTulemast").innerHTML = "Tere tulemast!"
+    }
+
+    // tehke sama asi nagu eelmine kord, aga p alla ei kirjuta midagi
+    //tuleb kasutada if ja else
+    if (new Date().getHours() < 10) {
+        document.getElementById("ajalineTervitus").innerHTML = "Tere hommikust!"
+    }
+
+    if (new Date().getHours() < 17) {
+        document.getElementById("ajalineTervitus").innerHTML = "Tere päevast!"
+    }
+
+    else {
+        document.getElementById("ajalineTervitus").innerHTML = "Tere õhtust!"
+    }
+
+    //teine variant ÕP
+    const time = new Date().getHours();
+    let text;
+    if(time < 9) {
+        text = "Tere hommikust!"
+    } else if (time < 20) {
+        text = "Tere päevast!";
+    } else {
+        text = "Tere ööd!";
+    }
+    document.getElementById("tervitus").innerHTML = text
+
+    //random number
+    if(Math.random() < 0.5) {
+        text = "<a href='https://www.tthk.ee/'> TTHK </a>";
+    } else {
+        text = "<a href='https://www.youtube.com/'> Youtube </a>";
+    }
+    document.getElementById("randomLink").innerHTML = text
+</script>
+</html>
